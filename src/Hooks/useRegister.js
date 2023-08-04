@@ -12,18 +12,10 @@ const useRegister = () => {
     const register = async (username, email, password) => {
         try {
             setIsLoading(true)
-            const response = await fetch('https://localhost:7015/api/usera/', {
+            const response = await fetch('https://localhost:7015/api/user/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*',
-
-                    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                    'Access-Control-Allow-Credentials': 'true',
-                    'Access-Control-Expose-Headers': 'Content-Length,X-JSON',
-                    'Access-Control-Max-Age': '86400',
-                    'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With'
-
                 },
                 body: JSON.stringify({username, email, password})
                 
