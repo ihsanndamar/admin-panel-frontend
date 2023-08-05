@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import useRegister from '../Hooks/useRegister'
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
@@ -10,12 +11,21 @@ const Register = () => {
 
     const { register, id, isSuccess, isLoading, error} = useRegister()
 
+    let navigate = useNavigate();
+
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        
         if(password !== password2) return alert('Passwords do not match')
         const data = await register(username, email, password)
+
+        if(isSuccess)
+        {
+            navigate('/login')
+        }
+
     }
 
 
