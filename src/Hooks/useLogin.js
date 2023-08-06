@@ -6,15 +6,20 @@ const useLogin = () => {
     const[isLoading, setIsLoading] = useState(false)
     const[error, setIsError] = useState()
 
-    const login = async (email, password) => {
+    const login = async (username, password) => {
         try {
             setIsLoading(true)
-            const response = await fetch('https://localhost:7015/api/user/login', {
+            const response = await fetch('https://localhost:7015/Login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+
+                    
                 },
-                body: JSON.stringify({email, password})
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
             }).catch(err => {
                 setIsLoading(false)
                 setIsError(err)
@@ -31,7 +36,7 @@ const useLogin = () => {
             setIsError(err)
         }
     };
-    return { login };
+    return { login, id, isSuccess, isLoading, error };
 }
  
 export default useLogin;

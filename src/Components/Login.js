@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useLogin from '../Hooks/useLogin'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
     const[username, setUsername] = useState('')
@@ -7,13 +8,27 @@ const Login = () => {
 
     const { login, id, isSuccess, isLoading, error} = useLogin()
 
+    let navigate = useNavigate();
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         const data = await login(username, password)
+        if(isSuccess){
+            console.log(id)
+            navigate('/config')
+            document.cookie = `id=${id}`
+            document.getElementById('config-item').className = "nav-link"
+        }
+        else{
+            console.log(error)
+        }
+        
     }
 
     return (
         <div className="login">
+            {isLoading && <div>Loading...</div>}
+
             <div class="container d-flex justify-content-center align-items-center">
                 <form onSubmit={handleSubmit}>
                     <h1>Login</h1>

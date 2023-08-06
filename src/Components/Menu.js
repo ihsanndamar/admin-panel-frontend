@@ -26,8 +26,10 @@ const Menu = () => {
 
 
                             <li class="nav-item">
-                                <Link class="nav-link disabled" aria-disabled="true" to="configuration">Configuration</Link>
+                                <Link class="nav-link disabled"  id="config-item" aria-disabled="false" to="config">Configuration</Link>
                             </li>
+
+                            
                         </ul>
 
                     </div>
