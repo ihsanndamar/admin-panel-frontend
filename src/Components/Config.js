@@ -11,7 +11,7 @@ const Config = () => {
     const handleUpdateBuilding = (e) => {
         e.preventDefault();
 
-        fetch('https://localhost:7015/api/Building/' + e.target.buildingId.value, {
+        fetch('http://16.171.200.109:7015/api/Building/' + e.target.buildingId.value, {
             method: 'PUT',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -40,7 +40,7 @@ const Config = () => {
 
         const isSuccessDelete = false;
 
-        fetch('https://localhost:7015/api/Building/' + id, {
+        fetch('http://16.171.200.109:7015/api/Building/' + id, {
             method: 'DELETE',
             headers: { "Content-Type": "application/json" },
         })

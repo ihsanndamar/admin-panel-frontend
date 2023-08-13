@@ -8,7 +8,7 @@ const useBuildingTypes = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://localhost:7015/api/BuildingType')
+        fetch('http://16.171.200.109:7015/api/BuildingType')
             .then(res => {
                 if(!res.ok) {
                     throw Error('Could not fetch data for that resource');
