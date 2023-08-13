@@ -13,7 +13,9 @@ const useLogin = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                    'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
                     
                 },
                 body: JSON.stringify({
