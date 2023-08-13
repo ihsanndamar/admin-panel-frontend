@@ -9,7 +9,7 @@ const useLogin = () => {
     const login = async (username, password) => {
         try {
             setIsLoading(true)
-            const response = await fetch('https://localhost:7015/Login', {
+            const response = await fetch('http://16.171.200.109:7015/Login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -28,7 +28,9 @@ const useLogin = () => {
             const data = await response.json()
             console.log(data)
             setIsLoading(false)
-            setIsSuccess(true)
+            if(data.id !== undefined){
+                setIsSuccess(true)
+            }
             setId(data.id)
             return data
         } catch (err) {

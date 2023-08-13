@@ -16,7 +16,7 @@ const NewBuilding = () => {
     const handleAddBuilding = (e) => {
 
 
-        fetch('https://localhost:7015/api/Building', {
+        fetch('http://16.171.200.109:7015/api/Building', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
