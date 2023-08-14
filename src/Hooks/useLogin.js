@@ -13,7 +13,7 @@ const useLogin = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Origin': 'http://16.171.200.109:7015/*',
                     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
                     'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
                     
