@@ -14,7 +14,7 @@ const useRegister = () => {
     const register = async (username, email, password) => {
         try {
             setIsLoading(true)
-            const response = await fetch('http://16.171.200.109:7015/api/user/', {
+            const response = await fetch(process.env.REACT_APP_URL + '/api/user/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

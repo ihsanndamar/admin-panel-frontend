@@ -8,7 +8,7 @@ const useBuilding = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://16.171.200.109:7015/api/Building')
+        fetch(process.env.REACT_APP_URL + '/api/Building')
             .then(res => {
                 if(!res.ok) {
                     throw Error('Could not fetch data for that resource');

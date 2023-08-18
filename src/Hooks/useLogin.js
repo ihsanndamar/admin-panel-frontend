@@ -9,7 +9,7 @@ const useLogin = () => {
     const login = async (username, password) => {
         try {
             setIsLoading(true)
-            const response = await fetch('http://16.171.200.109:7015/Login', {
+            const response = await fetch(process.env.REACT_APP_URL + '/Login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
